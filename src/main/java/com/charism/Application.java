@@ -2,8 +2,6 @@ package com.charism;
 
 import com.charism.model.Customer;
 import com.charism.service.CustomerService;
-import com.charism.service.CustomerServiceImpl;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
@@ -19,8 +17,7 @@ public class Application {
         try{
             setup();
             CustomerService customerService = context.getBean("customerService", CustomerService.class);
-            List<Customer> customers = customerService.findAll();
-            System.out.println(customers);
+            System.out.println(customerService.findAll());
         }catch (Exception ex){
             ex.printStackTrace();
         }finally {
